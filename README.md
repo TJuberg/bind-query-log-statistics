@@ -4,13 +4,13 @@ Produces a variety of statistics from one or more query logs passed on the comma
 
 # Usage:
 <pre>
-$ ./dnsrecon.py -h
-usage: dnsrecon.py [-h] [--matrix] [--histogram] [--count Count]
-                   [--excludeip [IP Address [IP Address ...]]]
-                   [--excludenet [Network [Network ...]]]
-                   [--domains [Domain [Domain ...]]] [--starttime Start Time]
-                   [--endtime End Time]
-                   [Logfile [Logfile ...]]
+$ ./bind-query-log-stats.py -h
+usage: bind-query-log-stats.py [-h] [--matrix] [--histogram] [--count [Count]]
+                               [--excludeip [IP Address [IP Address ...]]]
+                               [--excludenet [Network [Network ...]]]
+                               [--domains [Domain [Domain ...]]]
+                               [--starttime Start Time] [--endtime End Time]
+                               [Logfile [Logfile ...]]
 
 DNS Statistics Processor
 
@@ -21,7 +21,7 @@ optional arguments:
   -h, --help            show this help message and exit
   --matrix              Print client to domain resolution info
   --histogram           Print histogram of queries
-  --count Count         Number of entries to display
+  --count [Count]       Number of entries to display
   --excludeip [IP Address [IP Address ...]]
                         IPs to exclude from resolution matrix
   --excludenet [Network [Network ...]]
@@ -35,7 +35,7 @@ optional arguments:
 
 # Sample Output:
 
-$ dnsrecon.py /var/log/query.log* --domains prefetch.net foo.com --exclude 1.1.1.1 2.2.2.2 --histogram --matrix
+$ bind-query-log-stats.py /var/log/query.log* --domains prefetch.net foo.com --exclude 1.1.1.1 2.2.2.2 --histogram --matrix
 <pre>
 Processing logfile /var/log/query.log.1
 Processing logfile /var/log/query.log.2
