@@ -190,7 +190,7 @@ def processcli():
                         action="store_true")
     parser.add_argument('--histogram', help="Print histogram of queries",
                         action="store_true")
-    parser.add_argument('--count', nargs=1, help="Number of entries to display",
+    parser.add_argument('--count', nargs='?', type=int, help="Number of entries to display",
                         default=100, metavar="Count")
     parser.add_argument('--excludeip', nargs='*', help="IPs to exclude from resolution matrix",
                         default="", metavar="IP Address")
